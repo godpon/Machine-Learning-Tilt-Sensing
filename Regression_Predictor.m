@@ -48,7 +48,7 @@ testData.X_Axis_norm = X_Axis_FN;
 
 %% Plotting filtered variables:
 
-figure (1)
+figure (10)
 subplot(2,1,1);
 plot(raw_shift(1:lenX,:),'k-');
 hold on;
@@ -117,7 +117,7 @@ stop = 390;
 a = round(sqrt(CS(end)));
 b = ceil(sqrt(CS(end)));
 
-figure(2);
+figure(9);
 for i = 1:5
     gca = subplot(2,3,i);
     plot(testData.Time(start:stop),xActual(start:stop,1),'-.');
@@ -147,7 +147,7 @@ title("All models");
 mtit('Model Predictions - Grouped','fontsize',14,'color',[0 0 0],'xoff',0,'yoff',0.04);
 
 %%
-figure(3);
+figure(8);
 for i = 1:CS(end)
     subplot(b,a,i);
     plot(testData.Time(start:stop),xActual(start:stop,1),'r-','LineWidth',1.5);

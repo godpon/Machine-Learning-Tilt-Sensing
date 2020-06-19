@@ -78,14 +78,14 @@ trainDataY.Y_Axis_norm = Y_Axis_norm;
 y_dash = mean(trainDataX.IMU_X);
 TSS = sum((trainDataX.IMU_X - y_dash).^2);
 
-figure(4)
-plot(trainDataX.Time, trainDataX.IMU_1,':');
-hold on;
-plot(trainDataX.Time, trainDataX.IMU_X);
-plot(trainDataX.Time, trainDataX.X_Axis);
-plot(trainDataX.Time, 160*trainDataX.X_Axis_norm);
-hold off;
-grid on;
+% figure(4)
+% plot(trainDataX.Time, trainDataX.IMU_1,':');
+% hold on;
+% plot(trainDataX.Time, trainDataX.IMU_X);
+% plot(trainDataX.Time, trainDataX.X_Axis);
+% plot(trainDataX.Time, 160*trainDataX.X_Axis_norm);
+% hold off;
+% grid on;
 
 %% Plotting variables:
 figure (1)

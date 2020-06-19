@@ -56,7 +56,7 @@ Title_group_names = ["Linear", "Tree", "SVM", "Ensemble", "Gaussian Process Regr
 
 cc = [0.7 0.7 0.7];
 
-figure(1)
+figure(4)
 for i = 1:5
     gca = subplot(2,3,i);
     chart(i) = bar(RMSE(CS(i)+1:CS(i+1)),'FaceColor',cc);
@@ -65,7 +65,7 @@ for i = 1:5
     xtips = chart(i).XData;
     ytips = RMSE(CS(i)+1:CS(i+1));
     labels = string(round(chart(i).YData,2));
-    labels_r = string((floor(100*R_square(CS(i)+1:CS(i+1))))/100);
+    labels_r = string((floor(1000*R_square(CS(i)+1:CS(i+1))))/1000);
     text(xtips,ytips,labels,'HorizontalAlignment','center',...
         'VerticalAlignment','bottom','color',circshift(cc-0.6,1));
     text(xtips,0.8+ytips,labels_r,'HorizontalAlignment','center',...
@@ -78,16 +78,16 @@ mtit('Training model accuracies','fontsize',14,'color',[0 0 0],'xoff',0.37,'yoff
 mtit('Root mean square error (RMSE)','fontsize',9,'color',[0 0 0],'xoff',0.37,'yoff',-0.75);
 mtit('R^2 value of the fit','fontsize',9,'color',[1 0 0],'xoff',0.37,'yoff',-0.8);
 
-% figure(2);
-% gcb = subplot(1,1,1);
-% bar_chart_grp = bar(RMSE,0.5,'FaceColor',cc);
-% set(gcb,'XTick', [1:CS(end)]', 'XTickLabel', Full_Title_names);
-% xtickangle(30);
-% xtips = bar_chart_grp.XData;
-% ytips = 0.2 + RMSE;
-% labels = string(round(bar_chart_grp.YData,2));
-% text(xtips,ytips,labels,'HorizontalAlignment','center',...
-%     'VerticalAlignment','bottom','color',circshift(cc-0.6,1))
-% ylim([0 1.2*max(RMSE)]);
-% title('Training model accuracies');
-% ylabel('RMSE');
+figure(5);
+gcb = subplot(1,1,1);
+bar_chart_grp = bar(RMSE,0.5,'FaceColor',cc);
+set(gcb,'XTick', [1:CS(end)]', 'XTickLabel', Full_Title_names);
+xtickangle(30);
+xtips = bar_chart_grp.XData;
+ytips = 0.2 + RMSE;
+labels = string(round(bar_chart_grp.YData,2));
+text(xtips,ytips,labels,'HorizontalAlignment','center',...
+    'VerticalAlignment','bottom','color',circshift(cc-0.6,1))
+ylim([0 1.2*max(RMSE)]);
+title('Training model accuracies');
+ylabel('RMSE');
