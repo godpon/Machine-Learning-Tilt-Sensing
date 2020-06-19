@@ -45,9 +45,6 @@ Title_names = ["Linear","Interactions Linear","Robust Linear","Stepwise Linear",
 
 Title_group_names = ["Linear", "Tree", "SVM", "Ensemble", "Gaussian Process Regression"]';
 
-RMSE_old = [RMSE1 RMSE2 RMSE3 RMSE4 RMSE5 RMSE6 RMSE7 RMSE8 RMSE9 RMSE10 ...
-    RMSE11 RMSE12 RMSE13 RMSE14 RMSE15 RMSE16 RMSE17 RMSE18 RMSE19];
-
 cc = [0.7 0.7 0.7];
 
 figure(1)

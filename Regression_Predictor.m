@@ -1,6 +1,6 @@
 %% Initialisation of variables:
-testData.Properties.VariableNames{11} = 'IMU_1';
-testData.Properties.VariableNames{13} = 'X_Axis';
+% testData.Properties.VariableNames{11} = 'IMU_1';
+% testData.Properties.VariableNames{13} = 'X_Axis';
 
 xtestData_array = table2array(testData(:,2:5));
 xtestData_array = [xtestData_array testData.X_Axis];
