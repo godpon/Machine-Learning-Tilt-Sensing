@@ -74,6 +74,10 @@ trainDataX.X_Axis_norm = X_Axis_norm;
 trainDataY.IMU_Y = filt_IMU2;
 trainDataY.Y_Axis_norm = Y_Axis_norm;
 
+% Total Sum of Squares (TSS) calculation
+y_dash = mean(trainDataX.IMU_X);
+TSS = sum((trainDataX.IMU_X - y_dash).^2);
+
 figure(4)
 plot(trainDataX.Time, trainDataX.IMU_1,':');
 hold on;
@@ -146,3 +150,9 @@ mtit('Training Data','fontsize',14,'color',[0 0 0],'xoff',0,'yoff',.03);
 % %     xlim([0 2100]);
 % % end
 % % 
+%% Clear Temporary Variables:
+vars = {'y_dash','xtrainData_array','xmean_array','xrange_array',...
+    'ytrainData_array','ymean_array','yrange_array',...
+    'Ax_shift','Ax_norm','X_Axis_norm','Ay_shift','Ay_norm','Y_Axis_norm','B'};
+clear(vars{:});
+clear vars;
